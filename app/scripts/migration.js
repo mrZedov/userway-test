@@ -1,12 +1,8 @@
-#!/usr/bin/env node
-
 const { MikroORM } = require('@mikro-orm/core');
 const yargs = require('yargs');
 
 const path = require('path');
 const projectPath = path.dirname(__dirname);
-
-console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
 require('dotenv').config({ path: path.join(projectPath, 'config/.env') });
 
@@ -27,17 +23,12 @@ const args = yargs.scriptName('migration')
 const configFile = args.config || path.join(projectPath, 'dist', 'config', 'mikro-orm.config');
 
 const config = require(configFile).default;
-console.log('database: '+config.database)
 config.migrations.path = path.isAbsolute(config.migrations.path) ? config.migrations.path : path.join(projectPath, config.migrations.path);
 
-console.log('config: '+JSON.stringify(config))
-console.log('')
 MikroORM.init(config)
   .then(async (orm) => {
-    console.log('1')
     const migrator = orm.getMigrator();
     try {
-      console.log('2')
       if (args._.includes('create')) {
         await migrator.createMigration(undefined, args.blank);
       } else if (args._.includes('up')) {
@@ -54,8 +45,7 @@ MikroORM.init(config)
         yargs.showHelp();
       }
     } finally {
-      console.log('3')
       await orm.close();
     }
   })
-.catch((e) => console.error('',11,e));
+.catch((e) => console.error(e));

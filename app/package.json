@@ -34,6 +34,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "class-transformer": "~0.5.1",
+    "class-validator": "~0.14.0",
     "@nestjs/config": "~3.0.0",
     "@nestjs/swagger": "~7.1.10",
     "@mikro-orm/cli": "~5.7.14",
