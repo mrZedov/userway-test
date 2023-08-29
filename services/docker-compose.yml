@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 53TEGrr56Hjn7U
+      MYSQL_DATABASE: shortlink
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1qE4tYuJ7oO97Y
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
