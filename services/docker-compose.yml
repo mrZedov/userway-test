@@ -5,7 +5,7 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: 53TEGrr56Hjn7U
-      MYSQL_DATABASE: shortlink
+      MYSQL_DATABASE: userway
       MYSQL_USER: user
       MYSQL_PASSWORD: 1qE4tYuJ7oO97Y
     ports:
