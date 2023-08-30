@@ -5,9 +5,19 @@ export namespace ShortLinkCreateDto {
     @IsUrl()
     @Length(3, 500)
     fulllink: string;
+
+    shortlink?: string;
   }
 
   export class Response {
-    shortlink: string;
+    id?: number;
+    fulllink: string;
+    created: Date;
+  }
+}
+
+export namespace ShortLinkGetDto {
+  export class Response {
+    fulllink: string;
   }
 }
