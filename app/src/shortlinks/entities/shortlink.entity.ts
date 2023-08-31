@@ -1,6 +1,6 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
 import { ApiProperty } from '@nestjs/swagger';
-import { Prefix } from 'src/prefixes/entities/prefix.entity';
+import { Prefix } from '../../prefixes/entities/prefix.entity';
 
 @Entity({ tableName: 'shortlink' })
 export class Shortlink {
@@ -12,9 +12,6 @@ export class Shortlink {
   @Property({ length: 500 })
   fulllink: string;
 
-  // @ApiProperty()
-  // @Property({ length: 100 })
-  // shortlink: string;
   @ManyToOne({ entity: () => Prefix })
   prefix: Prefix;
 

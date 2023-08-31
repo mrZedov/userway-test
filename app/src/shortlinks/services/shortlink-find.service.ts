@@ -1,7 +1,7 @@
 import { EntityRepository } from '@mikro-orm/mysql';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { BadRequestException } from '@nestjs/common';
-import { RedisService } from 'src/redis/services/redis.service';
+import { RedisService } from '../../redis/services/redis.service';
 import { Shortlink } from '../entities/shortlink.entity';
 
 export class ShortLinkFindService {

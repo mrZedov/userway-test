@@ -1,7 +1,7 @@
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
-import { PrefixModule } from 'src/prefixes/prefix.module';
-import { RedisModule } from 'src/redis/redis.module';
+import { PrefixModule } from '../prefixes/prefix.module';
+import { RedisModule } from '../redis/redis.module';
 import { Shortlink } from './entities/shortlink.entity';
 import { ShortLinkCreateService } from './services/shortlink-create.service';
 import { ShortLinkFindService } from './services/shortlink-find.service';

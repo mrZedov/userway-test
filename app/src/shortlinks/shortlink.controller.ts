@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ShortLinkCreateDto, ShortLinkGetDto } from './dtos/shortlink.dto';
 import { ShortLinkCreateService } from './services/shortlink-create.service';

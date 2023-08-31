@@ -1,9 +1,9 @@
 import { EntityManager, EntityRepository } from '@mikro-orm/mysql';
 import { InjectRepository } from '@mikro-orm/nestjs';
-import { PrefixFindService } from 'src/prefixes/services/prefix-find.service';
+import { PrefixFindService } from '../../prefixes/services/prefix-find.service';
 import { ShortLinkCreateDto } from '../dtos/shortlink.dto';
 import { Shortlink } from '../entities/shortlink.entity';
-import { RedisService } from 'src/redis/services/redis.service';
+import { RedisService } from '../../redis/services/redis.service';
 
 export class ShortLinkCreateService {
   constructor(
