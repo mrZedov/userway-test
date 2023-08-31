@@ -39,8 +39,6 @@ Once those two are done, send over your code from part 1 and text from part 2.
 
 Thanks for taking the time to do this and showing interest!
 ______________
-______________
-______________
 
 # Реализация
 
