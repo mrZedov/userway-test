@@ -10,7 +10,9 @@ export class PrefixCreateService {
     private readonly em: EntityManager,
   ) {}
 
-  async create(data: PrefixCreateDto.Request): Promise<PrefixCreateDto.Response> {
+  async create(
+    data: PrefixCreateDto.Request,
+  ): Promise<PrefixCreateDto.Response> {
     const prefixNew = this.em.create(Prefix, data);
     await this.em.persistAndFlush(prefixNew);
     return prefixNew;

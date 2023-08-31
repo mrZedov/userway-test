@@ -11,7 +11,7 @@ export class ShortLinkFindService {
     private readonly redisService: RedisService,
   ) {}
 
-  async find(shortlink: string): Promise<any> {
+  async find(shortlink: string): Promise<string> {
     const shortLinkId = parseInt(shortlink.split('/').at(-1));
     if (!shortLinkId) throw new BadRequestException('Bad shortlink request');
 

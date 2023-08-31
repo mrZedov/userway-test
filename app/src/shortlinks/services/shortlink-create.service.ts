@@ -1,9 +1,12 @@
 import { EntityManager, EntityRepository } from '@mikro-orm/mysql';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { PrefixFindService } from '../../prefixes/services/prefix-find.service';
-import { ShortLinkCreateDto } from '../dtos/shortlink.dto';
 import { Shortlink } from '../entities/shortlink.entity';
 import { RedisService } from '../../redis/services/redis.service';
+import {
+  ShortLinkCreateDtoRequest,
+  ShortLinkCreateDtoResponse,
+} from '../dtos/shortlink.dto';
 
 export class ShortLinkCreateService {
   constructor(
@@ -14,7 +17,9 @@ export class ShortLinkCreateService {
     private readonly redisService: RedisService,
   ) {}
 
-  async create(data: ShortLinkCreateDto.Request): Promise<any> {
+  async create(
+    data: ShortLinkCreateDtoRequest,
+  ): Promise<ShortLinkCreateDtoResponse> {
     const prefixRec = await this.prefixFindService.findOneLast();
     const shortLinkRecNew = this.em.create(Shortlink, {
       ...data,

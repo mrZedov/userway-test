@@ -1,23 +1,25 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Length, IsUrl } from 'class-validator';
 
-export namespace ShortLinkCreateDto {
-  export class Request {
-    @IsUrl()
-    @Length(3, 500)
-    fulllink: string;
+export class ShortLinkCreateDtoRequest {
+  @IsUrl()
+  @Length(3, 500)
+  @ApiProperty({ description: 'dsdsdsd' })
+  fulllink: string;
 
-    shortlink?: string;
-  }
-
-  export class Response {
-    id?: number;
-    fulllink: string;
-    created: Date;
-  }
+  shortlink?: string;
 }
 
-export namespace ShortLinkGetDto {
-  export class Response {
-    fulllink: string;
-  }
+export class ShortLinkCreateDtoResponse {
+  @ApiProperty()
+  id: number;
+
+  @ApiProperty()
+  fulllink: string;
+
+  @ApiProperty()
+  created: Date;
+
+  @ApiProperty()
+  shortlink: string;
 }
